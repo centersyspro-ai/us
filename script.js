@@ -1,4 +1,4 @@
-﻿document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('demoForm');
     
     form.addEventListener('submit', function(e) {
@@ -9,19 +9,19 @@
         const email = document.getElementById('email').value.trim();
         
         if (!fullName || !email) {
-            showMessage('Please fill in all required fields.', 'error');
+            showMessage('Por favor completa todos los campos requeridos.', 'error');
             return;
         }
         
         if (!isValidEmail(email)) {
-            showMessage('Please enter a valid email address.', 'error');
+            showMessage('Por favor ingresa una dirección de correo válida.', 'error');
             return;
         }
         
         // Mostrar loading
         const submitBtn = form.querySelector('.submit-btn');
         const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
+        submitBtn.textContent = 'Enviando...';
         submitBtn.disabled = true;
         
         // Enviar formulario usando Formspree
@@ -36,20 +36,20 @@
         })
         .then(response => {
             if (response.ok) {
-                showMessage('Thank you! Your demo request has been sent. Redirecting...', 'success');
+                showMessage('¡Gracias! Tu solicitud de demo ha sido enviada. Redirigiendo...', 'success');
                 
-                // ? REDIRECCIÓN CORRECTA - Solo se ejecuta después de enviar el formulario
+                // Redirección después de 3 segundos
                 setTimeout(() => {
-                    window.location.href = 'thank-you.html';
+                    window.location.href = 'thanks.html';
                 }, 3000);
                 
                 form.reset();
             } else {
-                throw new Error('Form submission failed');
+                throw new Error('Error en el envío del formulario');
             }
         })
         .catch(error => {
-            showMessage('There was a problem sending your request. Please try again or contact us directly at centersyspro@gmail.com', 'error');
+            showMessage('Hubo un problema enviando tu solicitud. Por favor intenta nuevamente o contáctanos directamente a centersyspro@gmail.com', 'error');
         })
         .finally(() => {
             submitBtn.textContent = originalText;
@@ -113,6 +113,3 @@
         });
     });
 });
-
-// ? NO AGREGUES NADA MÁS DESPUÉS DE ESTA LÍNEA
-// El código termina aquí - sin redirecciones automáticas fuera del formulario
