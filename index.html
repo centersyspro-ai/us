@@ -145,22 +145,26 @@
             </div>
         </div>
 
-        <div class="container" style="margin-top: 40px;">
-            <div class="frame-container" style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; background: #f9f9f9; padding: 30px; border-radius: 12px; border: 1px solid #e0e0e0;">
-                
-                <div class="frame-video" style="flex: 1; min-width: 300px; display: flex; justify-content: center;">
-                    <video width="100%" style="max-width: 640px; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" controls>
-                        <source src="videos/demos.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                
-                <div class="frame-image" style="flex: 1; min-width: 300px; display: flex; justify-content: center;">
-                    <img src="fotos/ban1.png" alt="Website to Android App Conversion" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-                </div>
-
-            </div>
+        <!-- RECUADRO UNIFICADO 2: Video demos.mp4 + Imagen ban1.png en 2 columnas -->
+<div class="container" style="margin-top: 40px; max-width: 100%; padding: 0 15px; box-sizing: border-box;">
+    <div class="frame-container" style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center; background: #f9f9f9; padding: 20px; border-radius: 12px; border: 1px solid #e0e0e0; max-width: 100%; box-sizing: border-box;">
+        
+        <!-- Columna Izquierda: Video demos.mp4 -->
+        <div class="frame-video" style="flex: 1; min-width: 280px; max-width: 100%; display: flex; justify-content: center; box-sizing: border-box;">
+            <video style="width: 100%; max-width: 640px; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" controls>
+                <source src="videos/demos.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
+        
+        <!-- Columna Derecha: Imagen ban1.png -->
+        <div class="frame-image" style="flex: 1; min-width: 280px; max-width: 100%; display: flex; justify-content: center; box-sizing: border-box;">
+            <img src="fotos/ban1.png" alt="Website to Android App Conversion" style="width: 100%; max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); object-fit: contain;">
+        </div>
+
+    </div>
+</div>
+
     </section>
 
     <section class="location-section">
