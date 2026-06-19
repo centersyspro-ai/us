@@ -1,0 +1,307 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - WebToApp</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .thank-you-container {
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .service-info {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: left;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .service-info h3 {
+            color: #4CAF50;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .service-info ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .service-info li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .service-info li::before {
+            content: '✓';
+            color: #4CAF50;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        .email {
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: white;
+            color: #1e3c72;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #1e3c72;
+        }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .timeline-step {
+            text-align: center;
+            z-index: 2;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: #4CAF50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-weight: bold;
+        }
+
+        .step-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .thank-you-container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .btn-container {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .timeline {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .timeline::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="success-icon">🎉</div>
+        
+        <h1>Thank You!</h1>
+        <p class="subtitle">We have received your service request successfully</p>
+
+        <div class="service-info">
+            <h3>What Happens Next?</h3>
+            <ul>
+                <li><strong>For Android App Conversion:</strong> You will receive a personalized demo of your website as an Android app within <strong>48 hours</strong></li>
+                <li><strong>For Werbsite Maintenance:</strong> You will receive an email shortly with detailed information about our service plans and how to get started</li>
+                <li><strong>For New Business Webpage and Android App:</strong>  We will contact you shortly via WhatsApp to find out about the website you need.</li>
+            </ul>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-step">
+                <div class="step-number">1</div>
+                <div class="step-text">Request Received</div>
+            </div>
+            <div class="timeline-step">
+                <div class="step-number">2</div>
+                <div class="step-text">Processing</div>
+            </div>
+            <div class="timeline-step">
+                <div class="step-number">3</div>
+                <div class="step-text">Demo/Info Delivery</div>
+            </div>
+            <div class="timeline-step">
+                <div class="step-number">4</div>
+                <div class="step-text">Project Start</div>
+            </div>
+        </div>
+
+        <div class="contact-info">
+    <p><strong>Need immediate assistance?</strong></p>
+    <div class="contact-options">
+        <div class="contact-option">
+            <span class="contact-icon">📧</span>
+            <span class="contact-email">centersyspro@gmail.com</span>
+        </div>
+        <div class="contact-option">
+            <span class="contact-icon">💬</span>
+            <a href="https://wa.me/17864856393?text=Hi! I just submitted the demo request and need assistance" 
+               class="whatsapp-link" target="_blank">
+               Chat on WhatsApp
+            </a>
+        </div>
+    </div>
+      <p class="response-time">We typically respond within 2-4 hours during business days</p>
+</div>
+        <div class="btn-container">
+            <a href="index.html" class="btn">Back to Homepage</a>
+            <a href="https://wa.me/17864856393?text=Hi! I´m interested in one of your services."  class="btn btn-secondary">Or Contact Us By Whatsapp</a>
+        </div>
+    </div>
+
+    <script>
+        // Agregar un pequeño efecto de confeti después de cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                const confetti = document.createElement('div');
+                confetti.innerHTML = '🎊';
+                confetti.style.position = 'fixed';
+                confetti.style.top = '20px';
+                confetti.style.right = '20px';
+                confetti.style.fontSize = '2rem';
+                confetti.style.opacity = '0';
+                confetti.style.transition = 'opacity 1s';
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => {
+                    confetti.style.opacity = '1';
+                }, 100);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
